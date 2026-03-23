@@ -112,6 +112,8 @@ Into this
 - bug fix
 - add fill-color parameter for added values
 - fix color background for added values
+- update the documentation
+- add french documentation
 
 #### 0.2.3
 - fix [issue #17](https://github.com/Le-foucheur/Typst-VarTable/issues/17)
