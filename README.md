@@ -110,7 +110,7 @@ Into this
 
 #### 0.2.4
 - bug fix
-- add tfe fill-color parameter for added values
+- add fill-color parameter for added values
 - fix color background for added values
 
 #### 0.2.3

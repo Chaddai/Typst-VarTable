@@ -463,6 +463,7 @@
   /// La couleur de remplissage pour les valeurs sur les flèches (devrait être identique
   /// à l'arrière-plan du tableau)
   /// Par défaut : white
+  /// -> color
   fill-color: white,
   ///// *Optional*\
   ///// To add more stuff with Cetz
@@ -1876,22 +1877,3 @@
     })
   }
 }
-
-#tabvar(
-  label: (
-    ([$f’(x)$], .8cm, "s"),
-    ([$f$], 25mm, "v"),
-  ),
-
-  domain: ($ -oo $, ($ 0 $, 10cm), $ +oo $, $ 3 $),
-  contents: (
-    ($+$, ("||", $+$), $ - $),
-    (
-      (center, $0$),
-      (bottom, top, "||", $ -oo $, $ +oo $),
-      (center, $ 0 $),
-      (top, $ -oo $),
-    ),
-  ),
-  values: (("arrow11", $ beta $, $ alpha $, "f"),),
-)
