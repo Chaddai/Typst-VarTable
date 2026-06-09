@@ -844,7 +844,24 @@
                 name: "sign" + str(i) + str(j),
               )
 
-              if j != 0 {
+              if contents.at(i).at(j).at(0) == "0" {
+                set-style(..line-style)
+                line(
+                  (coordX.at(j).at(0), coordY.at(i).at(0) - coordY.at(i).at(1) / 2),
+                  (coordX.at(j).at(0), coordY.at(i).at(0) + coordY.at(i).at(1) / 2),
+                  name: "zero",
+                )
+                content(
+                  "zero.mid",
+                  $ 0 $,
+                )
+              } else if contents.at(i).at(j).first() == "|" {
+                set-style(..line-style)
+                line(
+                  (coordX.at(j).at(0), coordY.at(i).at(0) - coordY.at(i).at(1) / 2),
+                  (coordX.at(j).at(0), coordY.at(i).at(0) + coordY.at(i).at(1) / 2),
+                )
+              } else if j != 0 {
                 set-style(..line-style)
                 if contents.at(i).at(j).at(0) == "||" {
                   set-style(..table-style)
@@ -855,21 +872,6 @@
                   line(
                     (coordX.at(j).at(0) + 0.07, coordY.at(i).at(0) - coordY.at(i).at(1) / 2),
                     (coordX.at(j).at(0) + 0.07, coordY.at(i).at(0) + coordY.at(i).at(1) / 2),
-                  )
-                } else if contents.at(i).at(j).at(0) == "0" {
-                  line(
-                    (coordX.at(j).at(0), coordY.at(i).at(0) - coordY.at(i).at(1) / 2),
-                    (coordX.at(j).at(0), coordY.at(i).at(0) + coordY.at(i).at(1) / 2),
-                    name: "zero",
-                  )
-                  content(
-                    "zero.mid",
-                    $ 0 $,
-                  )
-                } else if contents.at(i).at(j).first() == "|" {
-                  line(
-                    (coordX.at(j).at(0), coordY.at(i).at(0) - coordY.at(i).at(1) / 2),
-                    (coordX.at(j).at(0), coordY.at(i).at(0) + coordY.at(i).at(1) / 2),
                   )
                 } else {
                   line(
