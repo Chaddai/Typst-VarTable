@@ -817,7 +817,7 @@
 
         if label.at(i).last() == "s" {
           // panic si il y a plus ou moins d’éléments qu’il faudrais
-          if contents.at(i).at(-1) == "||" {
+          if ("0", "|", "||").contains(contents.at(i).at(-1)) {
             if contents.at(i).len() != domain.len() {
               panic("TabVar: Wrong number of elements in the table number " + str(i + 1))
             }
@@ -1110,6 +1110,25 @@
             line(
               (decalage_domaine - 0.15, coordY.at(i).at(0) - coordY.at(i).at(1) / 2),
               (decalage_domaine - 0.15, coordY.at(i).at(0) + coordY.at(i).at(1) / 2),
+            )
+          } else if contents.at(i).at(-1) == "0" {
+            // Si zéro à la fin
+            set-style(..line-style)
+            line(
+              (coordX.at(-1).at(0), coordY.at(i).at(0) - coordY.at(i).at(1) / 2),
+              (coordX.at(-1).at(0), coordY.at(i).at(0) + coordY.at(i).at(1) / 2),
+              name: "zero",
+            )
+            content(
+              "zero.mid",
+              $ 0 $,
+            )
+          } else if contents.at(i).at(-1) == "|" {
+            // Si barre à la fin
+            set-style(..line-style)
+            line(
+              (coordX.at(-1).at(0), coordY.at(i).at(0) - coordY.at(i).at(1) / 2),
+              (coordX.at(-1).at(0), coordY.at(i).at(0) + coordY.at(i).at(1) / 2),
             )
           } else {
             if type(contents.at(i).at(-1)) == array and contents.at(i).at(-1).len() == 0 {
